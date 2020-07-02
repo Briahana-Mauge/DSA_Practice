@@ -24,9 +24,26 @@ Sample Output
 Explanation
 Consider the following steps:
 factorial(3) = 3 x factorial (2)
-factorial (2) = 2 x fqctorial (1)
+factorial (2) = 2 x factorial (1)
 factorial(1) = 1
 
 From steps 2 and 3, we can say factorial(2) = 2 x 1 = 2; 
 then when we apply the value from factorial(2) to step 1, we get factorial(3) = 3 x 2 x 1 = 6. 
 Thus, we print 6 as our answer. */
+
+function factorial(n) {
+    if (n < 0) {
+        return; 
+    }
+    else if (n === 0) {
+        return 1;
+    } else {
+        return n * factorial(n-1);
+    }
+}
+
+console.log(factorial(5)); // 120
+console.log(factorial(3)); // 6
+console.log(factorial(1)); // 1
+console.log(factorial(0)); // 1
+console.log(factorial(-9)); // undefined
