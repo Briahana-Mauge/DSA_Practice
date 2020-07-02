@@ -30,32 +30,30 @@ class BinaryTreeNode {
         this.right = null;
     }
 }
+
 class BinaryTree {
     constructor(value) {
         this.root = new BinaryTreeNode(value);
     }
     add(value) {
         let newNode = new BinaryTreeNode(value);
-        let depth = 0;
 
         const searchTree = (node) => {
-            depth++
-            // console.log(value, depth)
             if (value < node.value) {
                 if (!node.left) {
-                    node.left = newNode
+                    node.left = newNode;
                 } else {
-                    searchTree(node.left)
+                    searchTree(node.left);
                 }
             } else if (value > node.value) {
                 if (!node.right) {
-                    node.right = newNode
+                    node.right = newNode;
                 } else {
-                    searchTree(node.right)
+                    searchTree(node.right);
                 }
             }
         }
-        searchTree(this.root)
+        searchTree(this.root);
     }
 }
 
@@ -68,7 +66,7 @@ let tc2 = new BinaryTree(testCase2[0]);
 
 const makeTree = (tree, arr) => {
     for (let i = 1; i < arr.length; i++) {
-        tree.add(arr[i])
+        tree.add(arr[i]);
     }
 }
 makeTree(tc1, testCase1);
@@ -93,5 +91,5 @@ const rangeSumBST = (root, L, R) => {
     return sum;
 };
 
-console.log(rangeSumBST(tc1.root, 7, 15))
-console.log(rangeSumBST(tc2.root, 6, 10))
+console.log(rangeSumBST(tc1.root, 7, 15));
+console.log(rangeSumBST(tc2.root, 6, 10));
