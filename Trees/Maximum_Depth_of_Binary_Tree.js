@@ -20,7 +20,7 @@ return its depth = 3.
 
 */
 
-var maxDepth = function(root) {
+const maxDepth = (root) => {
   if(root === null){
       return 0;
   }
