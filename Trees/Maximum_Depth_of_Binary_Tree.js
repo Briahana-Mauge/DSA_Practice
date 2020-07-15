@@ -19,3 +19,9 @@ Given binary tree [3,9,20,null,null,15,7],
 return its depth = 3.
 
 */
+
+var maxDepth = function(root) {
+  if(root === null){
+      return 0;
+  }
+  return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
