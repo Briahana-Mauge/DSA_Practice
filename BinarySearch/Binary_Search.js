@@ -38,15 +38,13 @@ const search = function (nums, target) {
         } else {
             low = mid + 1;
         }
-
     }
     return -1;
 };
 
 let arr1 = [-1, 0, 3, 5, 9, 12];
-let arr2 = [-1, 0, 3, 5, 9, 12];
-let arr3 = [5];
+let arr2 = [5];
 
 console.log(search(arr1, 9)); // 4
-console.log(search(arr2, 2)); // -1
-console.log(search(arr3, 5)); // 0
+console.log(search(arr1, 2)); // -1
+console.log(search(arr2, 5)); // 0
