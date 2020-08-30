@@ -22,33 +22,33 @@ Input: [1,3,5,6], 0
 Output: 0
 */
 
-const searchInsert = function(nums, target) {
+const searchInsert = function (nums, target) {
     let low = 0;
     let high = nums.length - 1;
 
     while (low <= high) {
         let mid = Math.floor((low + high) / 2);
-        let index = nums[mid];
+        let value = nums[mid];
 
-        if (target === index) {
+        if (target === value) {
             return mid;
-        } else if (target < index) {
+        } else if (target < value) {
             high = mid - 1;
         } else {
             low = mid + 1;
         }
     }
-    
-    if(target < low){
+
+    if (target < nums[low]) {
         return low
-    }else{
-        return high +1;
+    } else {
+        return high + 1;
     }
-    
+
     return -1;
 }
 
-let arr = [1,3,5,6];
+let arr = [1, 3, 5, 6];
 
 console.log(searchInsert(arr, 5)); // 2
 console.log(searchInsert(arr, 2)); // 1

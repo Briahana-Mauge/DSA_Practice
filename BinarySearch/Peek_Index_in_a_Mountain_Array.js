@@ -22,3 +22,27 @@ Note:
 0 <= A[i] <= 10^6
 A is a mountain, as defined above.
 */
+
+const peakIndexInMountainArray = function(A) {
+    let low = 0;
+    let high = A.length - 1;
+
+    while (low < high) {
+        let mid = Math.floor((low+high) / 2);
+
+        if (A[mid] > A[mid - 1] && A[mid] > A[mid + 1]) {
+            return mid;
+        } else if (A[mid] > A[mid - 1]) {
+            low = mid;
+        } else {
+            high = mid;
+        }
+    }
+    return
+}
+
+let arr1 = [0,1,0];
+let arr2 = [0,2,1,0];
+
+console.log(peakIndexInMountainArray(arr1)); // 1
+console.log(peakIndexInMountainArray(arr2)); // 1
